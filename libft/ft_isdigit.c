@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsabir <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 12:44:28 by hsabir            #+#    #+#             */
-/*   Updated: 2021/10/12 12:47:26 by hsabir           ###   ########.fr       */
+/*   Created: 2021/10/12 14:22:36 by hsabir            #+#    #+#             */
+/*   Updated: 2021/10/12 14:28:58 by hsabir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int main()
+int	ft_isdigit(int c)
 {
-	char c;
-	c = 'A';
-	if(ft_isalpha(c) == 1)
-	{
-		printf("It is indeed alpha!");
-	}
+	if (c > 47 && c < 58)
+		return (1);
 	else
-	{
-		printf("Nah, it is not!");
-	}
+		return (0);
 }

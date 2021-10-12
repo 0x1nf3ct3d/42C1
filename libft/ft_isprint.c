@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsabir <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 12:44:28 by hsabir            #+#    #+#             */
-/*   Updated: 2021/10/12 12:47:26 by hsabir           ###   ########.fr       */
+/*   Created: 2021/10/12 15:02:39 by hsabir            #+#    #+#             */
+/*   Updated: 2021/10/12 15:39:17 by hsabir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int main()
+int	ft_isprint(int c)
 {
-	char c;
-	c = 'A';
-	if(ft_isalpha(c) == 1)
-	{
-		printf("It is indeed alpha!");
-	}
+	int		ft_isprint(int c)
+{
+	if (c > 31 && c < 127)
+		return (1);
 	else
-	{
-		printf("Nah, it is not!");
-	}
+		return (0);
 }
+
+}
+
+int	main(void)
+{
+	printf("
