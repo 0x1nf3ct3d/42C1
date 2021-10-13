@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsabir <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 12:44:28 by hsabir            #+#    #+#             */
-/*   Updated: 2021/10/12 12:47:26 by hsabir           ###   ########.fr       */
+/*   Created: 2021/10/13 09:34:06 by hsabir            #+#    #+#             */
+/*   Updated: 2021/10/13 10:02:43 by hsabir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int main()
+size_t	ft_strlen(const char *s)
 {
-	char c;
-	c = 'A';
-	if(ft_isalpha(c) == 1)
-	{
-		printf("It is indeed alpha!");
-	}
-	else
-	{
-		printf("Nah, it is not!");
-	}
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }

@@ -6,13 +6,23 @@
 #    By: hsabir <marvin@42lausanne.ch>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/11 13:50:51 by hsabir            #+#    #+#              #
-#    Updated: 2021/10/12 15:39:21 by hsabir           ###   ########.fr        #
+#    Updated: 2021/10/13 17:21:34 by hsabir           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CFLAGS = -Wall -Werror -Wextra -I. -c
-FILES = ft_isalpha.c
+FILES = ft_bzero.c\
+		ft_isalnum.c\
+		ft_isalpha.c\
+		ft_isascii.c\
+		ft_isdigit.c\
+		ft_isprint.c\
+		ft_memcpy.c\
+		ft_memmove.c\
+		ft_memset.c\
+		ft_strlcpy.c\
+		ft_strlen.c
 OBJ = $(FILES:%.c=%.o)
 
 all: $(NAME)

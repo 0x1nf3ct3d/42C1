@@ -1,21 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsabir <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 15:02:39 by hsabir            #+#    #+#             */
-/*   Updated: 2021/10/13 08:43:58 by hsabir           ###   ########.fr       */
+/*   Created: 2021/10/13 13:25:53 by hsabir            #+#    #+#             */
+/*   Updated: 2021/10/13 17:49:28 by hsabir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	if (c > 31 && c < 127)
-		return (1);
+	size_t	i;
+
+	if (src == NULL && dst == NULL)
+		return (NULL);
+	if (src <= dst)
+	{
+		while (len--)
+		{
+			((unsigned char *)dst)[len] = ((unsigned char *)src)[len];
+		}
+	}
 	else
-		return (0);
+	{
+		i = 0;
+		while (i < len)
+		{
+			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+			i++;
+		}
+	}
+	return (dst);
 }
