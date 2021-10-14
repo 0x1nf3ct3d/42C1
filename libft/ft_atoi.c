@@ -6,7 +6,7 @@
 /*   By: hsabir <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 15:30:41 by hsabir            #+#    #+#             */
-/*   Updated: 2021/10/14 15:58:35 by hsabir           ###   ########.fr       */
+/*   Updated: 2021/10/14 16:17:56 by hsabir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,5 @@ int	ft_atoi(const char *str)
 	}
 	if (negative % 2 != 0)
 		res = res * -1;
-	if (res > 2147483647)
-		return (0);
-	if (res < -2147483648)
-		return (-1);
 	return (res);
 }
