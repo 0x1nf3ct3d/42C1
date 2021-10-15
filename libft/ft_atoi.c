@@ -6,36 +6,44 @@
 /*   By: hsabir <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 15:30:41 by hsabir            #+#    #+#             */
-/*   Updated: 2021/10/14 16:17:56 by hsabir           ###   ########.fr       */
+/*   Updated: 2021/10/15 13:12:16 by hsabir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int	skipspace(char c)
 {
-	int	negative;
-	int	res;
-	int	i;
+	if (c == 32 || (c >= 9 && c <= 13))
+		return (1);
+	return (0);
+}
 
-	res = 0;
-	i = 0;
-	negative = 0;
-	while ((str[i] > 8 && str[i] < 20) || str[i] == ' ')
-		i++;
-	while ((str[i] == '-' ) || (str[i] == '+'))
+int	ft_atoi(const	char *str)
+{
+	int	result;
+	int	sign;
+	int	int_len;
+
+	result = 0;
+	sign = 1;
+	int_len = 0;
+	while (skipspace(*str))
+		str++;
+	if (*str == '-' || *str == '+')
 	{
-		if (str[i] == '-')
-			negative++;
-		i++;
+		if (*str == '-')
+			sign *= -1;
+		str++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	while (ft_isdigit(*str))
 	{
-		res *= 10;
-		res += ((int)str[i] - 48);
-		i++;
+		result = (result * 10) + (*str++ - '0');
+		int_len++;
 	}
-	if (negative % 2 != 0)
-		res = res * -1;
-	return (res);
+	if (int_len > 10 && sign == 1)
+		return (-1);
+	else if (int_len > 10)
+		return (0);
+	return (result * sign);
 }
