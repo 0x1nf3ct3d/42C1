@@ -6,7 +6,7 @@
 /*   By: hsabir <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 17:52:28 by hsabir            #+#    #+#             */
-/*   Updated: 2021/10/14 12:24:22 by hsabir           ###   ########.fr       */
+/*   Updated: 2021/10/18 18:05:15 by hsabir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	tmp;
 	size_t	len;
 
-	tmp = 0;
 	len = 0;
 	while (dst[len] && len < size)
 		len++;

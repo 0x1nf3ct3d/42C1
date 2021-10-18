@@ -6,7 +6,7 @@
 /*   By: hsabir <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 13:50:43 by hsabir            #+#    #+#             */
-/*   Updated: 2021/10/18 16:15:17 by hsabir           ###   ########.fr       */
+/*   Updated: 2021/10/18 17:00:47 by hsabir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t count, size_t size);
 int		ft_isalnum(int c);
-int		ft_asalpha(int c);
+int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
@@ -38,6 +38,7 @@ void	ft_putstr_fd(char *s, int fd);
 char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
