@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hsabir <marvin@42lausanne.ch>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/18 11:25:34 by hsabir            #+#    #+#             */
+/*   Updated: 2021/10/18 11:26:12 by hsabir           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_pow(int n)
@@ -41,9 +53,9 @@ void	ft_makestr(char *cp, int *i, size_t tmp, int pow)
 char	*ft_itoa(int n)
 {
 	unsigned int	tmp;
-	char		*cp;
-	size_t		pow;
-	int		i;
+	char			*cp;
+	size_t			pow;
+	int				i;
 
 	pow = ft_count(n);
 	i = 0;
