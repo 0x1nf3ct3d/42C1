@@ -60,9 +60,9 @@ $(NAME): $(OBJS)
 $(OBJS): $(SRCS)
 	gcc $(CFLAGS) $(SRCS)
 #So is needed only on linux in order to the unit test work properly
-#so:
-#	$(CC) -nostartfiles -fPIC $(CFLAGS) $(FILES)
-#	gcc -nostartfiles -shared -o libft.so $(OBJ)
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(FILES)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 clean:
 	rm -f $(OBJS)
