@@ -6,74 +6,63 @@
 /*   By: hsabir <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 11:25:34 by hsabir            #+#    #+#             */
-/*   Updated: 2021/10/18 11:26:12 by hsabir           ###   ########.fr       */
+/*   Updated: 2021/10/20 11:17:47 by hsabir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_pow(int n)
-{
-	size_t	p;
-
-	p = 1;
-	while (n-- > 0)
-		p *= 10;
-	return (p);
-}
-
-int	ft_count(int n)
-{
-	size_t	tmp;
-	size_t	p;
-
-	p = 1;
-	if (n < 0)
-		tmp = -n;
-	else
-		tmp = n;
-	while (tmp >= 10)
-	{
-		tmp /= 10;
-		p++;
-	}
-	return (p);
-}
-
-void	ft_makestr(char *cp, int *i, size_t tmp, int pow)
-{
-	while (((pow--) - 1) >= 0)
-	{
-		cp[(*i)++] = '0' + (tmp / ft_pow(pow));
-		tmp %= ft_pow(pow);
-	}
-	cp[(*i)] = '\0';
-}
+static long int		ft_countdigit(int n);
+static char			*ft_f(char *s, unsigned long int n, unsigned int i);
 
 char	*ft_itoa(int n)
 {
-	unsigned int	tmp;
-	char			*cp;
-	size_t			pow;
-	int				i;
+	int			i;
+	char		*string;
+	long int	number;
 
-	pow = ft_count(n);
-	i = 0;
+	number = 0;
+	string = NULL;
+	i = ft_countdigit(n);
+	string = (char *)malloc(sizeof(char) * (i + 1));
+	if (!(string))
+		return (NULL);
+	string[i--] = '\0';
+	if (n == 0)
+		string[0] = '0';
 	if (n < 0)
 	{
-		tmp = -n;
-		cp = (char *)malloc(sizeof(char) * (pow + 2));
-		if (!cp)
-			return (NULL);
-		cp[i++] = '-';
+		number = n;
+		number *= -1;
+		string[0] = '-';
 	}
 	else
+		number = n;
+	string = ft_f(string, number, i);
+	return (string);
+}
+
+static long int	ft_countdigit(int n)
+{
+	long int	b;
+
+	b = 0;
+	if (n <= 0)
+		b = 1;
+	while (n != 0)
 	{
-		tmp = n;
-		cp = (char *)malloc(sizeof(char) * (pow + 1));
-		if (!cp)
-			return (NULL);
+		b++;
+		n = n / 10;
 	}
-	ft_makestr(cp, &i, tmp, pow);
-	return (cp);
+	return (b);
+}
+
+static char	*ft_f(char *s, unsigned long int n, unsigned int i)
+{
+	while (n > 0)
+	{
+		s[i--] = 48 + (n % 10);
+		n = n / 10;
+	}
+	return (s);
 }
