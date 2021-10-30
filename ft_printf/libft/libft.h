@@ -15,6 +15,19 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+# include <stdio.h>
+# include <stdarg.h>
+# include <limits.h>
+
+int	ft_printf(const char *s, ...);
+void	ft_putstr_pp(char *s, int *count);
+void	ft_putnbr_p(int n, int *count);
+void	ft_put_long_nbr(long int n, int *const);
+char	*ft_hexnbr(unsigned int value, unsigned int base);
+char	*ft_ptraddr(unsigned long int value, unsigned long int base);
+char	*ft_str_toupper(char *c);
+void	ft_putchar_pp(char c, int *count);
+int	ft_base_converter(int nb);
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
