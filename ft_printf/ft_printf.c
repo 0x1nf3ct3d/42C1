@@ -24,14 +24,14 @@ int	ft_print(va_list ap, t_options *option)
 
 int	parse_format(va_list ap, char *format)
 {
-	int	i;
-	int	ret;
+	int		i;
+	int		ret;
 	t_options	*option;
 
 	i = 0;
 	ret = 0;
 	option = malloc(sizeof(t_options) * 1);
-	if (!option)
+	if (!(option))
 		return (-1);
 	while (format[i] != '\0')
 	{
@@ -40,9 +40,9 @@ int	parse_format(va_list ap, char *format)
 		if (format[i] == '%')
 		{
 			init(option);
-			while (format[++i] != '\0' && (ft_strchr(SPEC, format[i])))
+			while (format[++i] != '\0' && !(ft_strchr(SPEC, format[i])))
 				check_flags(ap, format, option, i);
-			option->spec = format[++i];
+			option->spec = format[i++];
 			if ((option->negative == 1 || option->precision > -1) && option->spec != '%')
 				option->zero = 0;
 			ret += ft_print(ap, option);

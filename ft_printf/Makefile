@@ -8,7 +8,7 @@ SRCS		= ./ft_print_c.c\
 		  ./ft_print_str.c\
 		  ./utils.c
 
-OBJS		= $(SRCS:%.c=%.o)
+OBJS		= $(SRCS:.c=.o)
 INCS		= .
 RM		= rm -f
 LIBC		= ar rc

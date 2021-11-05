@@ -33,7 +33,7 @@ void	width_precision(va_list ap, char *format, t_options *option, int i)
 		if (option->precision == -1)
 			option->width = option->width * 10 + format[i] - 48;
 		else
-			option->spec = option->spec * 10 + format[i] - 48;
+			option->precision = option->precision * 10 + format[i] - 48;
 	}
 	else if (format[i] == '*')
 	{
@@ -48,7 +48,7 @@ void	width_precision(va_list ap, char *format, t_options *option, int i)
 		}
 		else
 			option->precision = va_arg(ap, int);
-	}
+	}	
 }
 
 // Length of a number
