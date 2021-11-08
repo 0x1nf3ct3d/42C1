@@ -1,13 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_str.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hsabir <marvin@42lausanne.ch>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/08 12:12:58 by hsabir            #+#    #+#             */
+/*   Updated: 2021/11/08 12:35:10 by hsabir           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	put_width_str(char **buffer, t_options *option)
 {
 	char	*width;
-	int	i;
+	int		i;
 
 	if (option->width <= (int)ft_strlen(*buffer))
 		return ((int)ft_strlen(*buffer));
-	width = (char *)malloc(sizeof(char) * (option->width - ft_strlen(*buffer) + 1));
+	width = (char *)malloc(sizeof(char)
+			* (option->width - ft_strlen(*buffer) + 1));
 	i = 0;
 	while ((size_t)i < option->width - ft_strlen(*buffer))
 	{
@@ -27,13 +40,10 @@ int	put_width_str(char **buffer, t_options *option)
 
 char	*parse_buffer(char *str, int end, int len)
 {
-	int	i;
+	int		i;
 	char	*buffer;
 
-	//
-	if (end < len)
-		end = end;
-	else
+	if (end > len)
 		end = len;
 	buffer = (char *)malloc(sizeof(char) * end + 1);
 	if (!buffer)
@@ -50,7 +60,7 @@ char	*parse_buffer(char *str, int end, int len)
 
 int	ft_print_str(char *str, t_options *option)
 {
-	int	ret;
+	int		ret;
 	char	*buffer;
 
 	ret = 0;

@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hsabir <marvin@42lausanne.ch>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/08 12:39:18 by hsabir            #+#    #+#             */
+/*   Updated: 2021/11/08 12:59:39 by hsabir           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	ft_print(va_list ap, t_options *option)
 {
-	int	ret;
+	int		ret;
 	char	spec;
 
 	ret = 0;
@@ -24,8 +36,8 @@ int	ft_print(va_list ap, t_options *option)
 
 int	parse_format(va_list ap, char *format)
 {
-	int		i;
-	int		ret;
+	int			i;
+	int			ret;
 	t_options	*option;
 
 	i = 0;
@@ -43,7 +55,8 @@ int	parse_format(va_list ap, char *format)
 			while (format[++i] != '\0' && !(ft_strchr(SPEC, format[i])))
 				check_flags(ap, format, option, i);
 			option->spec = format[i++];
-			if ((option->negative == 1 || option->precision > -1) && option->spec != '%')
+			if ((option->negative == 1 || option->precision > -1)
+				&& option->spec != '%')
 				option->zero = 0;
 			ret += ft_print(ap, option);
 		}
@@ -52,11 +65,11 @@ int	parse_format(va_list ap, char *format)
 	return (ret);
 }
 
-int ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
-	int	ret;
+	int		ret;
 	va_list	ap;
-	
+
 	va_start(ap, format);
 	ret = parse_format(ap, (char *)format);
 	va_end(ap);

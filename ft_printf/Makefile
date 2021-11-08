@@ -13,7 +13,7 @@ INCS		= .
 RM		= rm -f
 LIBC		= ar rc
 CC		= gcc
-CFLAGS		= -Wall -Wextra -Werror
+CFLAGS		= -Wall -Wextra -Werror -Wno-self-assign
 .c.o :
 	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) -I$(INCS)
 

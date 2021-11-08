@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_nbr.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hsabir <marvin@42lausanne.ch>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/08 11:50:01 by hsabir            #+#    #+#             */
+/*   Updated: 2021/11/08 12:32:49 by hsabir           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	ft_ptr_prefix(char **buffer)
@@ -11,7 +23,8 @@ int	ft_put_minus(t_options *option, char **buffer)
 	int	l;
 
 	l = 0;
-	if ((option->spec == 'i' || option->spec == 'd' ) && option->zero == 0 && option->sign == -1)
+	if ((option->spec == 'i' || option->spec == 'd' )
+		&& option->zero == 0 && option->sign == -1)
 	{
 		*buffer = ft_strjoin("-", *buffer, 2);
 		l = 1;
@@ -42,18 +55,18 @@ int	ft_put_precision(unsigned long long nbr, t_options *option, char **buffer)
 	int	buffer_len;
 	int	ret;
 	int	i;
-	
+
 	buffer_len = ft_nbrlen(nbr, option);
-	ret = (option->precision > buffer_len ) ? option->precision : buffer_len;
-	if (!(*buffer = (char *)malloc(sizeof(char) *ret + 1)))
+	if (option->precision > buffer_len)
+		ret = option->precision;
+	else
+		ret = buffer_len;
+	*buffer = (char *)malloc(sizeof(char) * ret + 1);
+	if (!(*buffer))
 		return (0);
 	i = 0;
 	(*buffer)[ret] = '\0';
-	while (buffer_len + i < ret)
-	{
-		(*buffer)[i] = '0';
-		i++;
-	}
+	ft_bzero(*buffer, ret);
 	i = 1;
 	if (nbr == 0 && option->precision != 0)
 		(*buffer)[ret - i] = '0';
@@ -69,8 +82,8 @@ int	ft_put_precision(unsigned long long nbr, t_options *option, char **buffer)
 int	ft_print_nbr(unsigned long long nbr, t_options *option)
 {
 	char	*buffer;
-	int	buffer_len;
-	int	ret;
+	int		buffer_len;
+	int		ret;
 
 	if (option->spec == 'x' || option->spec == 'X' || option->spec == 'p')
 		option->nbr_base = 16;
