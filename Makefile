@@ -6,7 +6,7 @@
 #    By: hsabir <marvin@42lausanne.ch>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/09 11:26:53 by hsabir            #+#    #+#              #
-#    Updated: 2021/11/09 11:26:58 by hsabir           ###   ########.fr        #
+#    Updated: 2021/11/09 14:11:50 by hsabir           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,8 @@ $(NAME) : $(OBJS)
 	$(LIBC) $(NAME) $(OBJS)
 
 all : $(NAME)
+
+bonus : ${NAME}
 
 fclean : clean
 	$(RM) $(NAME)
