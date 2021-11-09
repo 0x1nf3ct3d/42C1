@@ -6,7 +6,7 @@
 /*   By: hsabir <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 11:50:01 by hsabir            #+#    #+#             */
-/*   Updated: 2021/11/08 12:32:49 by hsabir           ###   ########.fr       */
+/*   Updated: 2021/11/09 10:31:05 by hsabir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,17 +64,17 @@ int	ft_put_precision(unsigned long long nbr, t_options *option, char **buffer)
 	*buffer = (char *)malloc(sizeof(char) * ret + 1);
 	if (!(*buffer))
 		return (0);
-	i = 0;
+	i = -1;
 	(*buffer)[ret] = '\0';
-	ft_bzero(*buffer, ret);
+	while (buffer_len + ++i < ret)
+		(*buffer)[i] = '0';
 	i = 1;
 	if (nbr == 0 && option->precision != 0)
 		(*buffer)[ret - i] = '0';
 	while (nbr)
 	{
-		(*buffer)[ret - i] = ft_baseset(option->spec)[nbr % option->nbr_base];
+		(*buffer)[ret - i++] = ft_baseset(option->spec)[nbr % option->nbr_base];
 		nbr /= option->nbr_base;
-		i++;
 	}
 	return (buffer_len);
 }

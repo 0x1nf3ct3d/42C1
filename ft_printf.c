@@ -6,7 +6,7 @@
 /*   By: hsabir <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 12:39:18 by hsabir            #+#    #+#             */
-/*   Updated: 2021/11/08 12:59:39 by hsabir           ###   ########.fr       */
+/*   Updated: 2021/11/09 10:26:48 by hsabir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,14 @@ int	ft_print(va_list ap, t_options *option)
 	return (ret);
 }
 
+void	zero_logic(t_options *option, char format)
+{
+	option->spec = format;
+	if ((option->negative == 1 || option->precision > -1)
+		&& option->spec != '%')
+		option->zero = 0;
+}
+
 int	parse_format(va_list ap, char *format)
 {
 	int			i;
@@ -54,10 +62,7 @@ int	parse_format(va_list ap, char *format)
 			init(option);
 			while (format[++i] != '\0' && !(ft_strchr(SPEC, format[i])))
 				check_flags(ap, format, option, i);
-			option->spec = format[i++];
-			if ((option->negative == 1 || option->precision > -1)
-				&& option->spec != '%')
-				option->zero = 0;
+			zero_logic(option, format[i++]);
 			ret += ft_print(ap, option);
 		}
 	}

@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsabir <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/18 11:26:38 by hsabir            #+#    #+#             */
-/*   Updated: 2021/10/18 11:26:44 by hsabir           ###   ########.fr       */
+/*   Created: 2021/11/09 10:43:24 by hsabir            #+#    #+#             */
+/*   Updated: 2021/11/09 10:43:27 by hsabir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
-{	
+int	ft_putstr(char *s)
+{
 	int	i;
 
 	i = 0;
-	if (!s)
-		return ;
 	while (s[i])
 	{
-		write(fd, &s[i], 1);
+		write(1, &s[i], 1);
 		i++;
 	}
-	write(fd, "\n", 1);
+	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: hsabir <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 12:12:58 by hsabir            #+#    #+#             */
-/*   Updated: 2021/11/08 12:35:10 by hsabir           ###   ########.fr       */
+/*   Updated: 2021/11/09 10:32:10 by hsabir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	put_width_str(char **buffer, t_options *option)
 	i = 0;
 	while ((size_t)i < option->width - ft_strlen(*buffer))
 	{
-		if (option->width == 1)
+		if (option->zero == 1)
 			width[i] = '0';
 		else
 			width[i] = ' ';
