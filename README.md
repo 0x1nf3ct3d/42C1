@@ -1,4 +1,5 @@
 # ft_printf
+[![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/hsabir/ft_printf)](https://github.com/JaeSeoKim/badge42)
 ## A mimic of standard printf function.
 
 ![alt text](https://github.com/1mthe0wl/ft_printf/blob/main/ft_printf.png?raw=true)
