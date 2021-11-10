@@ -1,6 +1,6 @@
 # ft_printf
 ## A mimic of standard printf function.
-[![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/hsabir/Libft)](https://github.com/JaeSeoKim/badge42)
+[![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/hsabir/ft_printf)](https://github.com/JaeSeoKim/badge42)
 ![alt text](https://github.com/1mthe0wl/ft_printf/blob/main/ft_printf.png?raw=true)
 
 Back when I started the piscine there were a strange rule, that we were not allowed to use the standard printf function from libc, therefore we should use the write() function from <unistd.h> which takes only one character in a time, then we created the ft_putstr(), and ft_putnbr() functions which iterated through an array write its items. Now there is another adventure of recreating printf. 
