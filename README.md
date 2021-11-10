@@ -19,3 +19,5 @@ The prototype of printf looks something like this `int printf(const char *, ...)
 
 The variadic function handles the issue of not knowing howmany argument we will get.
 Once this problem has been handled the next step is to look at the format until we reach at a special character which is a '%', Once we reach it we will then look the afterward what is there, and here is some art of abstraction, the next step is to determine what is after '%' and initialize our structure, Oh yes for the sake of simplicity I'm using a structure which contains my types that change based on the flags defined, at this rate all I did is to check what is after '%' until I reach to one of the specifiers `cspdiuxX%`, and I've done this by reading  and playing with two manuals [cpp reference of printf](https://www.cplusplus.com/reference/cstdio/printf/), [Secrets of “printf”](https://www.cypress.com/file/54441/download).
+
+Yes, as the note says, we first check if there are some flags specified? If yes, we set the coresponding flags inside our structure, then one we are on a specifier we send it to the ft_print() function.
