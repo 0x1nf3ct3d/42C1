@@ -6,7 +6,7 @@
 /*   By: hsabir <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 12:37:38 by hsabir            #+#    #+#             */
-/*   Updated: 2021/11/09 15:57:28 by hsabir           ###   ########.fr       */
+/*   Updated: 2021/11/10 11:04:48 by hsabir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 // Initializing the structure
 void	init(t_options *option)
 {
+	option->negative = 0;
 	option->zero = 0;
 	option->width = 0;
 	option->precision = -1;
