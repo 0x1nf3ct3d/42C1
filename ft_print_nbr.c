@@ -6,7 +6,7 @@
 /*   By: hsabir <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 11:50:01 by hsabir            #+#    #+#             */
-/*   Updated: 2021/11/09 10:31:05 by hsabir           ###   ########.fr       */
+/*   Updated: 2021/12/06 17:28:56 by hsabir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_ptr_prefix(char **buffer)
 {
-	*buffer = ft_strjoin("0x", *buffer, 2);
+	*buffer = my_strjoin("0x", *buffer, 2);
 	return (ft_strlen(*buffer));
 }
 
@@ -26,7 +26,7 @@ int	ft_put_minus(t_options *option, char **buffer)
 	if ((option->spec == 'i' || option->spec == 'd' )
 		&& option->zero == 0 && option->sign == -1)
 	{
-		*buffer = ft_strjoin("-", *buffer, 2);
+		*buffer = my_strjoin("-", *buffer, 2);
 		l = 1;
 	}
 	return (l);
@@ -41,7 +41,7 @@ int	ft_put_minus1(int buffer_len, t_options *option, char **buffer)
 	{
 		if (buffer_len >= option->width)
 		{
-			*buffer = ft_strjoin("-", *buffer, 2);
+			*buffer = my_strjoin("-", *buffer, 2);
 			l = 1;
 		}
 		else if (buffer_len < option->width)

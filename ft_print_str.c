@@ -6,7 +6,7 @@
 /*   By: hsabir <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 12:12:58 by hsabir            #+#    #+#             */
-/*   Updated: 2021/11/09 10:32:10 by hsabir           ###   ########.fr       */
+/*   Updated: 2021/12/06 17:30:34 by hsabir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ int	put_width_str(char **buffer, t_options *option)
 	}
 	width[i] = '\0';
 	if (option->negative == 0)
-		*buffer = ft_strjoin(width, *buffer, 3);
+		*buffer = my_strjoin(width, *buffer, 3);
 	else
-		*buffer = ft_strjoin(*buffer, width, 3);
+		*buffer = my_strjoin(*buffer, width, 3);
 	return (option->width);
 }
 

@@ -6,7 +6,7 @@
 #    By: hsabir <marvin@42lausanne.ch>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/11 13:50:51 by hsabir            #+#    #+#              #
-#    Updated: 2021/11/09 10:40:42 by hsabir           ###   ########.fr        #
+#    Updated: 2021/12/06 17:14:48 by hsabir           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,11 +26,9 @@ SRCS = ft_atoi.c\
 		ft_memcpy.c\
 		ft_memmove.c\
 		ft_memset.c\
-		ft_putchar.c\
 		ft_putchar_fd.c\
 		ft_putendl_fd.c\
 		ft_putnbr_fd.c\
-		ft_putstr.c\
 		ft_putstr_fd.c\
 		ft_split.c\
 		ft_strchr.c\
@@ -47,7 +45,19 @@ SRCS = ft_atoi.c\
 		ft_strtrim.c\
 		ft_substr.c\
 		ft_tolower.c\
-		ft_toupper.c
+		ft_toupper.c\
+		ft_lstnew.c\
+		ft_lstadd_front.c\
+		ft_lstsize.c\
+		ft_lstlast.c\
+		ft_lstadd_back.c\
+		ft_lstdelone.c\
+		ft_lstclear.c\
+		ft_lstiter.c\
+		ft_lstmap.c\
+		get_next_line.c\
+		ft_putchar.c
+
 OBJS = $(SRCS:%.c=%.o)
 
 all: $(NAME)
@@ -58,6 +68,8 @@ all: $(NAME)
 #s: 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
+
+bonus: all
 
 $(OBJS): $(SRCS)
 	gcc $(CFLAGS) $(SRCS)
