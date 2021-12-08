@@ -2,7 +2,7 @@
 ## Final result: [![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/hsabir/ft_printf)](https://github.com/JaeSeoKim/badge42)
 > **_NOTE:_**  This project is now integrated and maintained withing the [LIBFT]() library, and no more update will come to here, however the implementation guide will be still relevant.
 
-###### ft_printf is a project at 42, in which we had to recode the standard printf function from the stdio library. The goal of this project is not only recreating the wheel, but learning about [Variadic Functions](https://en.wikipedia.org/wiki/Variadic_function#In_C), and improving algorithmic methodology.
+#### ft_printf is a project at 42, in which we had to recode the standard printf function from the stdio library. The goal of this project is not only recreating the wheel, but learning about [Variadic Functions](https://en.wikipedia.org/wiki/Variadic_function#In_C), and improving algorithmic methodology.
 
 ## Table of Contents
 1. [The subject](#The-subject)
